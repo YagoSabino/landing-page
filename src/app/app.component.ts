@@ -22,10 +22,11 @@ export class AppComponent implements OnInit{
   menuOpen: boolean = false;
   imagePath = environment.imagePath;
   images = [
-    `${this.imagePath}/notfound.jpg`,
-    `${this.imagePath}/notfound.jpg`,
-    `${this.imagePath}/notfound.jpg`,
-    `${this.imagePath}/notfound.jpg`,
+    '/carousel-1.svg',
+    '/carousel-2.svg',
+    '/carousel-3.svg',
+    '/carousel-4.svg',
+    '/carousel-5.svg',
   ]
 
   constructor() {
