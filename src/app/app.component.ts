@@ -1,13 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faBars, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
+import { environment } from '@environment/environment';
+import { ImageCarouselComponent } from '@components/image-carousel/image-carousel.component';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FontAwesomeModule, ImageCarouselComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
+  currentIndex = 0;
   title = 'codingLandingPage';
+  faBars = faBars;
+  faBarsStaggered = faBarsStaggered;
+  menuOpen: boolean = false;
+  imagePath = environment.imagePath;
+  images = [
+    `${this.imagePath}/notfound.jpg`,
+    `${this.imagePath}/notfound.jpg`,
+    `${this.imagePath}/notfound.jpg`,
+    `${this.imagePath}/notfound.jpg`,
+  ]
+
+  constructor() {
+    //
+  }
+  ngOnInit(): void {
+    initFlowbite();
+  }
+
+  openMenu() {
+    this.menuOpen = !this.menuOpen;
+    return this.menuOpen;
+  }
+
 }

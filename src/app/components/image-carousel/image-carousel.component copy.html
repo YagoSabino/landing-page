@@ -1,0 +1,12 @@
+<div class="h-48 w-40 overflow-hidden border">
+    <div #carouselContainer class="flex flex-row gap-4 transition-transform duration-500">
+        @for (image of images; track $index) {
+            <div class="">
+                <img [src]="image" alt="Carrossel Image" class="h-40 w-40">
+            </div>
+        }
+    </div>
+    <button (click)="prev()" class="top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2">Prev</button>
+    <button (click)="next()" class="top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2">Next</button>
+</div>
+
