@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'primeng/resources/themes/soho-light/theme.css';
+@import 'primeng/resources/primeng.css';
+@import 'primeflex/primeflex.css';
+@import "primeicons/primeicons.css";
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* style for primeface blocks */
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
