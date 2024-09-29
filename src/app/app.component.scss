@@ -1,0 +1,15 @@
+:host ::ng-deep .p-menuitem-link {
+    @apply dark:text-primary-contrast hover:dark:text-primary-500;
+}
+
+:host ::ng-deep .p-submenu-list {
+    @apply dark:bg-surface-300;
+}
+
+:host ::ng-deep .p-submenu-list .p-menuitem-link {
+    @apply dark:text-primary-500;
+}
+
+:host ::ng-deep .p-menuitem-active .p-menuitem-link {
+    @apply dark:text-primary-500;
+}

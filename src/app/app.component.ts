@@ -1,10 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-import { PrimeNGConfig } from 'primeng/api';
+import { NavbarComponent } from '@components/navbar/navbar.component';
+import { MenuItem, PrimeNGConfig } from 'primeng/api';
+import { AvatarModule } from 'primeng/avatar';
+import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 
@@ -14,21 +19,34 @@ import { StyleClassModule } from 'primeng/styleclass';
   standalone: true,
   imports: [
     RouterOutlet,
+    CommonModule,
     InputTextModule,
     FormsModule,
     ButtonModule,
     RippleModule,
     StyleClassModule,
     ChipModule,
+    MenubarModule,
+    BadgeModule,
+    AvatarModule,
+    NavbarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit{
 
+  items: MenuItem[] | undefined;
+  isDark = false;
+  title = 'landing-page';
+
   constructor(private primengConfig: PrimeNGConfig) {}
 
   ngOnInit(): void {
+    this.primeNgConfigure();
+  }
+
+  private primeNgConfigure() {
     this.primengConfig.ripple = true;
     this.primengConfig.zIndex = {
       modal: 1100,    // dialog, sidebar
@@ -37,6 +55,4 @@ export class AppComponent implements OnInit{
       tooltip: 1100   // tooltip
     };
   }
-
-  title = 'landing-page';
 }

@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '[class*="app-dark"]'],
   content: [
-    "./src/**/*.{html,ts}",
+    "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-primeui')],
   corePlugins: {
     preflight: false,
   },
