@@ -4,14 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '@components/navbar/navbar.component';
 import { MenuItem, PrimeNGConfig } from 'primeng/api';
-import { AvatarModule } from 'primeng/avatar';
-import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from 'primeng/button';
 import { ChipModule } from 'primeng/chip';
 import { InputTextModule } from 'primeng/inputtext';
-import { MenubarModule } from 'primeng/menubar';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
+import { HeroComponent } from "./components/hero/hero.component";
+import { CardModule } from 'primeng/card';
 
 
 @Component({
@@ -26,11 +25,10 @@ import { StyleClassModule } from 'primeng/styleclass';
     RippleModule,
     StyleClassModule,
     ChipModule,
-    MenubarModule,
-    BadgeModule,
-    AvatarModule,
     NavbarComponent,
-  ],
+    HeroComponent,
+    CardModule,
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
